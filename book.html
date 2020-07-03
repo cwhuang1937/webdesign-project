@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Choosing Movie</title>
+    <link rel="stylesheet" type="text/css" href="style_question.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="content">
+        <div>
+            <form id="form" action="./book_result.php" method="POST">
+                <section class="content" id="ques1">
+                    <h2 id="q1"></h2>
+                    <ol type="A">
+                        <li>
+                            <input type="radio" name="q1" id="qq1a">
+                            <a id="q1a"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q1" id="qq1b">
+                            <a id="q1b"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q1" id="qq1c">
+                            <a id="q1c"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q1" id="qq1d">
+                            <a id="q1d"></a>
+                        </li>
+                        <br>
+                    </ol>
+                </section>
+
+                <section class="content" id="ques2">
+                    <h2 id="q2"></h2>
+                    <ol type="A">
+                        <li>
+                            <input type="radio" name="q2" id="qq2a">
+                            <a id="q2a"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q2" id="qq2b">
+                            <a id="q2b"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q2" id="qq2c">
+                            <a id="q2c"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q2" id="qq2d">
+                            <a id="q2d"></a>
+                        </li>
+                        <br>
+                    </ol>
+                </section>
+
+                <section class="content" id="ques3">
+                    <h2 id="q3"></h2>
+                    <ol type="A">
+                        <li>
+                            <input type="radio" name="q3" id="qq3a">
+                            <a id="q3a"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q3" id="qq3b">
+                            <a id="q3b"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q3" id="qq3c">
+                            <a id="q3c"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q3" id="qq3d">
+                            <a id="q3d"></a>
+                        </li>
+                        <br>
+                    </ol>
+                </section>
+
+                <section class="content" id="ques4">
+                    <h2 id="q4"></h2>
+                    <ol type="A">
+                        <li>
+                            <input type="radio" name="q4" id="qq4a">
+                            <a id="q4a"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q4" id="qq4b">
+                            <a id="q4b"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q4" id="qq4c">
+                            <a id="q4c"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q4" id="qq4d">
+                            <a id="q4d"></a>
+                        </li>
+                        <br>
+                        <div style="text-align: center">
+                            <input type="submit" value="Finish" id="finish">
+                        </div>
+                    </ol>
+                </section>
+                <br>
+                <br>
+            </form>
+        </div>
+        <div>
+            <img id="head_img" src="img/robot_0.png">
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var win_alert = window.alert("You will have four questions !!!");
+    window.onload = gen_que(1);
+
+    var qNum = 1;
+    var inputs = document.getElementsByTagName("input");
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("click", doClick);
+    }
+    function doClick(event) {
+        if (qNum == 4) {
+            return;
+        }
+        else nextQuestion();
+    }
+    function nextQuestion() {
+        var questionId = "ques" + qNum;
+        var nextQuestionId = "ques" + (++qNum);
+        var presentQ = document.getElementById(questionId);
+        var nextQ = document.getElementById(nextQuestionId);
+        presentQ.style.display = "none";
+        nextQ.style.display = "block";
+        gen_que(qNum);
+    }
+
+
+    function gen_que(index) {
+        index_cho = Math.floor(Math.random()*2+1);
+        switch (index) {
+            case 1:
+                switch (index_cho) {
+                    case 1:
+                        document.getElementById("q1").innerHTML = "Question 1: 你覺得你現在最缺乏什麼調味料？";
+                        document.getElementById("q1a").innerHTML = "糖與蜜";
+                        document.getElementById("q1b").innerHTML = "適當的苦澀";
+                        document.getElementById("q1c").innerHTML = "生命所需的鹹份";
+                        document.getElementById("q1d").innerHTML = "咋舌的酸味";
+                        document.getElementById("qq1a").setAttribute('value', "3200");
+                        document.getElementById("qq1b").setAttribute('value', "0123");
+                        document.getElementById("qq1c").setAttribute('value', "0212");
+                        document.getElementById("qq1d").setAttribute('value', "2231");
+                        break;
+                    case 2:
+                        document.getElementById("q1").innerHTML = "Question 1: 你喜歡聽什麼故事？";
+                        document.getElementById("q1a").innerHTML = "帶你走入另一個世界";
+                        document.getElementById("q1b").innerHTML = "能讓你有所成長";
+                        document.getElementById("q1c").innerHTML = "幫助你立下典範與目標";
+                        document.getElementById("q1d").innerHTML = "讓你看看這世界運作的法則";
+                        document.getElementById("qq1a").setAttribute('value', "3201");
+                        document.getElementById("qq1b").setAttribute('value', "1222");
+                        document.getElementById("qq1c").setAttribute('value', "2213");
+                        document.getElementById("qq1d").setAttribute('value', "0132");
+                        break;
+                }
+                break;
+            case 2:
+                switch (index_cho) {
+                    case 1:
+                        document.getElementById("q2").innerHTML = "Question 2: 你覺得你的生活少了什麼?";
+                        document.getElementById("q2a").innerHTML = "命運之人的邂逅";
+                        document.getElementById("q2b").innerHTML = "追逐的目標";
+                        document.getElementById("q2c").innerHTML = "輕鬆的小樂趣";
+                        document.getElementById("q2d").innerHTML = "跳脫現實的束縛";
+                        document.getElementById("qq2a").setAttribute('value', "3200");
+                        document.getElementById("qq2b").setAttribute('value', "1123");
+                        document.getElementById("qq2c").setAttribute('value', "2130");
+                        document.getElementById("qq2d").setAttribute('value', "2300");
+                        break;
+                    case 2:
+                        document.getElementById("q2").innerHTML = "Question 2: 你嚮往什麼生活?";
+                        document.getElementById("q2a").innerHTML = "充滿冒險";
+                        document.getElementById("q2b").innerHTML = "悠閒自在";
+                        document.getElementById("q2c").innerHTML = "積極進取";
+                        document.getElementById("q2d").innerHTML = "現在的生活已經很好了";
+                        document.getElementById("qq2a").setAttribute('value', "3100");
+                        document.getElementById("qq2b").setAttribute('value', "0120");
+                        document.getElementById("qq2c").setAttribute('value', "1013");
+                        document.getElementById("qq2d").setAttribute('value', "1210");
+                        break;
+                }
+                break;
+            case 3:
+                switch (index_cho) {
+                    case 1:
+                        document.getElementById("q3").innerHTML = "Question 3: 如果你要去上班，你會選擇甚麼交通工具?";
+                        document.getElementById("q3a").innerHTML = "公車";
+                        document.getElementById("q3b").innerHTML = "捷運";
+                        document.getElementById("q3c").innerHTML = "汽車";
+                        document.getElementById("q3d").innerHTML = "機車";
+                        document.getElementById("qq3a").setAttribute('value', "0132");
+                        document.getElementById("qq3b").setAttribute('value', "0023");
+                        document.getElementById("qq3c").setAttribute('value', "2300");
+                        document.getElementById("qq3d").setAttribute('value', "3200");
+                        break;
+                    case 2:
+                        document.getElementById("q3").innerHTML = "Question 3: 你書包內一定會帶什麼東西?";
+                        document.getElementById("q3a").innerHTML = "筆記本";
+                        document.getElementById("q3b").innerHTML = "電子字典";
+                        document.getElementById("q3c").innerHTML = "鉛筆盒";
+                        document.getElementById("q3d").innerHTML = "零食";
+                        document.getElementById("qq3a").setAttribute('value', "0003");
+                        document.getElementById("qq3b").setAttribute('value', "0231");
+                        document.getElementById("qq3c").setAttribute('value', "0321");
+                        document.getElementById("qq3d").setAttribute('value', "3000");
+                        break;
+                }
+                break;
+            case 4:
+                switch (index_cho) {
+                    case 1:
+                        document.getElementById("q4").innerHTML = "Question 4: 半夜肚子呃，你想買甚麼當消夜?";
+                        document.getElementById("q4a").innerHTML = "酥雞";
+                        document.getElementById("q4b").innerHTML = "芋片";
+                        document.getElementById("q4c").innerHTML = "麵";
+                        document.getElementById("q4d").innerHTML = "烤";
+                        document.getElementById("qq4a").setAttribute('value', "2101");
+                        document.getElementById("qq4b").setAttribute('value', "0004");
+                        document.getElementById("qq4c").setAttribute('value', "0130");
+                        document.getElementById("qq4d").setAttribute('value', "3110");
+                        break;
+                    case 2:
+                        document.getElementById("q4").innerHTML = "Question 4: 突然想要幫媽媽打掃家裡，可是弄壞了對媽媽來說很重要的東西!這東西是什麼?";
+                        document.getElementById("q4a").innerHTML = "愛用的馬克杯";
+                        document.getElementById("q4b").innerHTML = "漂亮的玻璃花瓶";
+                        document.getElementById("q4c").innerHTML = "高級的水晶酒杯";
+                        document.getElementById("q4d").innerHTML = "把全身鏡弄破";
+                        document.getElementById("qq4a").setAttribute('value', "0013");
+                        document.getElementById("qq4b").setAttribute('value', "0130");
+                        document.getElementById("qq4c").setAttribute('value', "1300");
+                        document.getElementById("qq4d").setAttribute('value', "3100");
+                        break;
+                }
+                break;
+        }
+    }
+
+    var i = 0;
+    var gear = setInterval(gearMove, 200);
+    function gearMove() {
+        var g = document.getElementById("head_img");
+        var name = "img/robot_" + i + ".png";
+        g.src = name;
+        i < 5 ? ++i : i = 0;
+    }
+
+
+</script>

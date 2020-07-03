@@ -1,0 +1,21 @@
+.content{
+    text-align: center;
+}
+#head_img {
+    position: absolute;
+    width: 85%;
+    left: 12%;
+    top: 30px;
+    z-index: -1;
+}
+#ques {
+    position: relative;
+    top: 140px;
+    font-size: 40px;
+}
+#ques input {
+    width: 150px;
+}
+input{
+    font-size: 25px;
+}

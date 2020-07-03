@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Choosing Movie</title>
+    <link rel="stylesheet" type="text/css" href="style_question.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="content">
+        <div>
+            <form id="form" action="./movie_result.php" method="POST">
+                <section class="content" id="ques1">
+                    <h2 id="q1"></h2>
+                    <ol type="A">
+                        <li>
+                            <input type="radio" name="q1" id="qq1a">
+                            <a id="q1a"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q1" id="qq1b">
+                            <a id="q1b"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q1" id="qq1c">
+                            <a id="q1c"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q1" id="qq1d">
+                            <a id="q1d"></a>
+                        </li>
+                        <br>
+                    </ol>
+                </section>
+
+                <section class="content" id="ques2">
+                    <h2 id="q2"></h2>
+                    <ol type="A">
+                        <li>
+                            <input type="radio" name="q2" id="qq2a">
+                            <a id="q2a"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q2" id="qq2b">
+                            <a id="q2b"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q2" id="qq2c">
+                            <a id="q2c"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q2" id="qq2d">
+                            <a id="q2d"></a>
+                        </li>
+                        <br>
+                    </ol>
+                </section>
+
+                <section class="content" id="ques3">
+                    <h2 id="q3"></h2>
+                    <ol type="A">
+                        <li>
+                            <input type="radio" name="q3" id="qq3a">
+                            <a id="q3a"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q3" id="qq3b">
+                            <a id="q3b"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q3" id="qq3c">
+                            <a id="q3c"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q3" id="qq3d">
+                            <a id="q3d"></a>
+                        </li>
+                        <br>
+                    </ol>
+                </section>
+
+                <section class="content" id="ques4">
+                    <h2 id="q4"></h2>
+                    <ol type="A">
+                        <li>
+                            <input type="radio" name="q4" id="qq4a">
+                            <a id="q4a"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q4" id="qq4b">
+                            <a id="q4b"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q4" id="qq4c">
+                            <a id="q4c"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <input type="radio" name="q4" id="qq4d">
+                            <a id="q4d"></a>
+                        </li>
+                        <br>
+                        <div style="text-align: center">
+                            <input type="submit" value="Finish" id="finish">
+                        </div>
+                    </ol>
+                </section>
+                <br>
+                <br>
+            </form>
+        </div>
+        <div>
+            <img id="head_img" src="img/robot_0.png">
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var win_alert = window.alert("You will have four questions !!!");
+    window.onload = gen_que(1);
+
+    var qNum = 1;
+    var inputs = document.getElementsByTagName("input");
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("click", doClick);
+    }
+    function doClick(event) {
+        if (qNum == 4) {
+            return;
+        }
+        else nextQuestion();
+    }
+    function nextQuestion() {
+        var questionId = "ques" + qNum;
+        var nextQuestionId = "ques" + (++qNum);
+        var presentQ = document.getElementById(questionId);
+        var nextQ = document.getElementById(nextQuestionId);
+        presentQ.style.display = "none";
+        nextQ.style.display = "block";
+        gen_que(qNum);
+    }
+
+
+    function gen_que(index) {
+        index_cho = Math.floor(Math.random()*2+1)
+        switch (index) {
+            case 1:
+                switch (index_cho) {
+                    case 1:
+                        document.getElementById("q1").innerHTML = "Question 1: 當你一覺醒來，你希望以下什麼事情發生?";
+                        document.getElementById("q1a").innerHTML = "有機會能搬離原本環境";
+                        document.getElementById("q1b").innerHTML = "抽中豪華遊輪mix無人島渡假九日遊";
+                        document.getElementById("q1c").innerHTML = "收到下落不明的父親寄來的信件";
+                        document.getElementById("q1d").innerHTML = "什麼事情都沒發生，是個平常的一天";
+                        document.getElementById("qq1a").setAttribute('value', "032020");
+                        document.getElementById("qq1b").setAttribute('value', "110021");
+                        document.getElementById("qq1c").setAttribute('value', "203200");
+                        document.getElementById("qq1d").setAttribute('value', "002103");
+                        break;
+                    case 2:
+                        document.getElementById("q1").innerHTML = "Question 1: 當你進入一間早餐店，以下哪樣你最想點?";
+                        document.getElementById("q1a").innerHTML = "飯糰加蛋";
+                        document.getElementById("q1b").innerHTML = "燒餅加油條";
+                        document.getElementById("q1c").innerHTML = "總匯三明治";
+                        document.getElementById("q1d").innerHTML = "培根蛋餅";
+                        document.getElementById("qq1a").setAttribute('value', "131201");
+                        document.getElementById("qq1b").setAttribute('value', "110220");
+                        document.getElementById("qq1c").setAttribute('value', "312013");
+                        document.getElementById("qq1d").setAttribute('value', "010232");
+                        break;
+                }
+                break;
+            case 2:
+                switch (index_cho) {
+                    case 1:
+                        document.getElementById("q2").innerHTML = "Question 2: 如果說這世界有個天大的秘密，你覺得會是什麼?";
+                        document.getElementById("q2a").innerHTML = "千萬別惹松鼠，因為他們操控著整個世界";
+                        document.getElementById("q2b").innerHTML = "你一直在等待的那個人離你不遠囉";
+                        document.getElementById("q2c").innerHTML = "你猜對了，其實一切由0和1構成的";
+                        document.getElementById("q2d").innerHTML = "只要你敢做夢，世界就會為你鋪好道路";
+                        document.getElementById("qq2a").setAttribute('value', "200103");
+                        document.getElementById("qq2b").setAttribute('value', "031020");
+                        document.getElementById("qq2c").setAttribute('value', "201310");
+                        document.getElementById("qq2d").setAttribute('value', "023001");
+                        break;
+                    case 2:
+                        document.getElementById("q2").innerHTML = "Question 2: 如果你看到一個老人躺在路邊，你會怎麼做?";
+                        document.getElementById("q2a").innerHTML = "無視他，因為他可能是壞人";
+                        document.getElementById("q2b").innerHTML = "出於善心上前關切他";
+                        document.getElementById("q2c").innerHTML = "救他，因為他可能是我未來的岳父";
+                        document.getElementById("q2d").innerHTML = "救他，因為他可能是有錢人";
+                        document.getElementById("qq2a").setAttribute('value', "302120");
+                        document.getElementById("qq2b").setAttribute('value', "013100");
+                        document.getElementById("qq2c").setAttribute('value', "030102");
+                        document.getElementById("qq2d").setAttribute('value', "000103");
+                        break;
+                }
+                break;
+            case 3:
+                switch (index_cho) {
+                    case 1:
+                        document.getElementById("q3").innerHTML = "Question 3: 如果世界末日來臨，你覺得會是怎樣的場景?";
+                        document.getElementById("q3a").innerHTML = "外星人入侵地球，所有國家同心協力發展高科技抵擋";
+                        document.getElementById("q3b").innerHTML = "全球氣候異常，稀少的生存資源挑戰著人性";
+                        document.getElementById("q3c").innerHTML = "第四次世界大戰，必須潛入敵對國家獲得戰情";
+                        document.getElementById("q3d").innerHTML = "病毒爆發喪屍怪獸橫行，必須小心翼翼、隨時可能會被襲擊";
+                        document.getElementById("qq3a").setAttribute('value', "201301");
+                        document.getElementById("qq3b").setAttribute('value', "113010");
+                        document.getElementById("qq3c").setAttribute('value', "310002");
+                        document.getElementById("qq3d").setAttribute('value', "111131");
+                        break;
+                    case 2:
+                        document.getElementById("q3").innerHTML = "Question 3: 你希望在死前做什麼?";
+                        document.getElementById("q3a").innerHTML = "希望自己的愛人陪在身邊";
+                        document.getElementById("q3b").innerHTML = "拿著槍到大街上掃射";
+                        document.getElementById("q3c").innerHTML = "高空彈跳";
+                        document.getElementById("q3d").innerHTML = "發現新的物理定律";
+                        document.getElementById("qq3a").setAttribute('value', "032000");
+                        document.getElementById("qq3b").setAttribute('value', "101131");
+                        document.getElementById("qq3c").setAttribute('value', "003102");
+                        document.getElementById("qq3d").setAttribute('value', "003103");
+                        break;
+                }
+                break;
+            case 4:
+                switch (index_cho) {
+                    case 1:
+                        document.getElementById("q4").innerHTML = "Question 4: 如果你現在可以穿越時空一次，你會用這項能力做些什麼?";
+                        document.getElementById("q4a").innerHTML = "回到過去，了解歷史的真相";
+                        document.getElementById("q4b").innerHTML = "看下一期的大樂透";
+                        document.getElementById("q4c").innerHTML = "見死去的親人";
+                        document.getElementById("q4d").innerHTML = "和自己的初戀告白";
+                        document.getElementById("qq4a").setAttribute('value', "113120");
+                        document.getElementById("qq4b").setAttribute('value', "000203");
+                        document.getElementById("qq4c").setAttribute('value', "023100");
+                        document.getElementById("qq4d").setAttribute('value', "032001");
+                        break;
+                    case 2:
+                        document.getElementById("q4").innerHTML = "Question 4: 當你看到一棵樹快倒了你會怎麼做？";
+                        document.getElementById("q4a").innerHTML = "小心的避開";
+                        document.getElementById("q4b").innerHTML = "想辦法把它弄倒";
+                        document.getElementById("q4c").innerHTML = "觀察它為什麼會倒";
+                        document.getElementById("q4d").innerHTML = "聯絡相關單位處理";
+                        document.getElementById("qq4a").setAttribute('value', "201001");
+                        document.getElementById("qq4b").setAttribute('value', "001230");
+                        document.getElementById("qq4c").setAttribute('value', "002103");
+                        document.getElementById("qq4d").setAttribute('value', "130001");
+                        break;
+                }
+                break;
+        }
+    }
+
+    var i = 0;
+    var gear = setInterval(gearMove, 200);
+    function gearMove() {
+        var g = document.getElementById("head_img");
+        var name = "img/robot_" + i + ".png";
+        g.src = name;
+        i < 5 ? ++i : i = 0;
+    }
+
+
+</script>

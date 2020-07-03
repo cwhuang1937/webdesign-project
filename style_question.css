@@ -1,0 +1,32 @@
+
+
+#head_img {
+    position: absolute;
+    width: 85%;
+    left: 12%;
+    top: 30px;
+    z-index: -1;
+}
+
+#form {
+    padding-top: 10%;
+    padding-left: 30%;;
+}
+
+#ques2, #ques3, #ques4{
+    display: none;
+}
+#ques1 {
+    display: block;
+}
+
+#ques input {
+    width: 150px;
+}
+
+#finish{
+    font-size: 25px;
+} 
+
+
+
